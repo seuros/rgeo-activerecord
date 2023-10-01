@@ -29,6 +29,8 @@ Gemfile:
 gem 'rgeo-activerecord'
 ```
 
+Version `7.1+` supports ActiveRecord 6.1, and 7.x with `rgeo` 3.0+
+
 Version `7.0+` supports ActiveRecord 5.x, 6.x, and 7.x with `rgeo` 1.0+
 
 Version `6.2+` supports ActiveRecord 5.x and 6.x with `rgeo` 1.0+
@@ -97,7 +99,7 @@ Here is an example using `st_contains`:
 point = RGeo::Geos.factory(srid: 0).point(1,1)
 
 buildings = Building.arel_table
-containing_buiildings = Building.where(buildings[:geom].st_contains(point))
+containing_buildings = Building.where(buildings[:geom].st_contains(point))
 ```
 
 or using the `Arel.spatial` node:
@@ -106,7 +108,7 @@ or using the `Arel.spatial` node:
 point = "SRID=0;POINT(1,1)"
 
 buildings = Building.arel_table
-containing_buiildings = Building.where(buildings[:geom].st_contains(Arel.spatial(point)))
+containing_buildings = Building.where(buildings[:geom].st_contains(Arel.spatial(point)))
 ```
 
 _Note: If you pass a WKT representation into an st_function, you should prepend the string with SRID=your_srid, otherwise the database will assume SRID=0 which may cause errors on certain operations._

@@ -15,13 +15,13 @@ Gem::Specification.new do |spec|
   spec.required_ruby_version = ">= 2.5.0"
 
   spec.add_dependency "activerecord", ">= 5.0"
-  spec.add_dependency "rgeo", ">= 1.0.0"
+  spec.add_dependency "rgeo", ">= 3.0.0"
 
   spec.add_development_dependency "appraisal", "~> 2.1"
   spec.add_development_dependency "ffi-geos", "~> 1.2"
   spec.add_development_dependency "minitest", "~> 5.8"
   spec.add_development_dependency "mocha", "~> 1.1"
-  spec.add_development_dependency "rake", "~> 12.0"
+  spec.add_development_dependency "rake"
   spec.add_development_dependency "rgeo-geojson", ">= 1.0.0"
   spec.add_development_dependency "simplecov", ">= 0.20.0"
 end

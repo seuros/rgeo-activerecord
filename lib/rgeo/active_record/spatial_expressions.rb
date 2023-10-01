@@ -2,12 +2,6 @@
 
 module RGeo
   module ActiveRecord
-    # Returns true if spatial expressions (i.e. the methods in the
-    # SpatialExpressions module) are supported.
-    def self.spatial_expressions_supported?
-      defined?(Arel::Nodes::NamedFunction)
-    end
-
     # A set of spatial expression builders.
     # These methods can be chained off other spatial expressions to form
     # complex expressions.
